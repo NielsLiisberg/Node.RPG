@@ -77,8 +77,8 @@ What you need before you start:
 * ILE RPG compiler.
 
 
-from a IBMi menu prompt start the SSH deamon:`===> STRTCPSVR *SSHD`
-Or start ssh win/mac
+From a IBMi menu prompt start the SSH deamon:`===> STRTCPSVR *SSHD`
+Or start ssh from win/mac
 
 ```
 mkdir /prj
@@ -91,14 +91,15 @@ gmake
 ```
 
 # Test it:
-log on to your IBNMi
+Log on to your IBMi.
 from a IBMi menu prompt 
 ````
+CALL QCMD
 ADDLIBLE NODERPG
 SBMJOB CMD(CALL PGM(DEMO01)) ALWMLTTHD(*YES) JOB(NODE_DEMO1) JOBQ(QSYSNOMAX) 
 SBMJOB CMD(CALL PGM(DEMO02)) ALWMLTTHD(*YES) JOB(NODE_DEMO2) JOBQ(QSYSNOMAX) 
 ````
-Now in a browser:
+Now test it in a browser:
 
 * http://myibmi:44998
 * http://myibmi:44999
