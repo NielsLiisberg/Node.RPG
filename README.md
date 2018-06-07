@@ -29,7 +29,7 @@ Example:
         // for multithreading. Each client request is handled by a seperate thread.
         // Start it:
         // SBMJOB CMD(CALL PGM(DEMO01)) JOB(NODERPG) JOBQ(QSYSNOMAX) ALWMLTTHD(*YES)        
-        // ----------------------------------------------------------------------------- */     
+        // -----------------------------------------------------------------------------     
         ctl-opt copyright('Sitemule.com  (C), 2018');
         ctl-opt decEdit('0,') datEdit(*YMD.) main(main);
         ctl-opt debug(*yes) bndDir('NODERPG');
@@ -37,7 +37,7 @@ Example:
         /include noderpg.inc
         // -----------------------------------------------------------------------------
         // Main
-        // ----------------------------------------------------------------------------- */     
+        // -----------------------------------------------------------------------------     
         dcl-proc main;
 
             dcl-ds config likeds(configDS);
@@ -49,8 +49,8 @@ Example:
 
         end-proc;
         // -----------------------------------------------------------------------------
-        // Servlet callback implementation
-        // ----------------------------------------------------------------------------- */     
+        // Servlet call back implementation
+        // -----------------------------------------------------------------------------     
         dcl-proc myservlet;
 
             dcl-pi *n;
