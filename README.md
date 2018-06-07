@@ -8,11 +8,13 @@ The design paradigm is the same as found in Node.JS hence the name. Where Node.J
 
 Except for initialization, It only requires two lines of code:
 
-node_listen ( config : servletCallback); 
-node_write ( request : response);
+`node_listen ( config : servletCallback);` 
+`node_write ( request : response);`
 
 The node_liste are listening on the TCP/IP port and interface you define in the config structure. For each http request it will call you "servlet" which is a callback procedure that takes a request and a response parameter
    
+![](image.png)
+
 
 The idea is that you deploy your (open source of cause) RPG packages at NPM so the RPG community can benefit from each others work. The NPM echosystem is the same for Node.JS and Node.RPG    
 
