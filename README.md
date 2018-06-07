@@ -12,7 +12,7 @@ Except for initialization, It only requires two lines of code:
  node_write ( request : response);
 ```
 
-The node_liste are listening on the TCP/IP port and interface you define in the config structure. For each http request it will call you "servlet" which is a callback procedure that takes a request and a response parameter
+The `node_liste` are listening on the TCP/IP port and interface you define in the config structure. For each http request it will call you "servlet" which is a callback procedure that takes a request and a response parameter
    
 ![](image.png)
 
@@ -62,5 +62,5 @@ Example:
         end-proc;
 ```
 
-This first version is has only implemented the listen and write, so there is not much use in real world application, however - we at Sitemule are striving to move the core of the IceBreak server into the Node.RPG project over the next couple of months. So stay tuned.
+This first commit we have only implemented the `node_listen` and `node_write`, so there is not much use for real world application, however - we at Sitemule are striving to move the core of the IceBreak server into the Node.RPG project over the next couple of months. So stay tuned.
  
