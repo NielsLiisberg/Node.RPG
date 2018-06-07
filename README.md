@@ -67,7 +67,6 @@ Example:
         end-proc;
 ```
 
-This first commit we have only implemented the `node_listen` and `node_write`, so there is not much use for real world application, however - we at Sitemule are striving to move the core of the IceBreak server into the Node.RPG project over the next couple of months. So stay tuned.
  
 # Installation
 What you need before you start:
@@ -77,7 +76,9 @@ What you need before you start:
 * ILE C 
 * ILE RPG compiler.
 
-start ssh or call qp2term
+
+from a IBMi menu prompt start the SSH deamon:`===> STRTCPSVR *SSHD`
+Or start ssh win/mac
 
 ```
 mkdir /prj
@@ -88,9 +89,32 @@ gmake
 cd test 
 gmake
 ```
-Yes - You compile the project with gmake, and I have also included at 
-set up folder for vsCode so you can compile any changes 
-with `Ctrl-shift.B` You need however to 
+
+# Test it:
+log on to your IBNMi
+from a IBMi menu prompt 
+````
+ADDLIBLE NODERPG
+SBMJOB CMD(CALL PGM(DEMO01)) ALWMLTTHD(*YES) JOB(NODE_DEMO1) JOBQ(QSYSNOMAX) 
+SBMJOB CMD(CALL PGM(DEMO02)) ALWMLTTHD(*YES) JOB(NODE_DEMO2) JOBQ(QSYSNOMAX) 
+````
+Now in a browser:
+
+* http://myibmi:44998
+* http://myibmi:44999
+
+A simple hello and list with a counter. Please note that the job requires `ALWMLTTHD(*YES)`
+
+
+# Develop:
+You compile the project with gmake, and I have also included a 
+setup folder for vsCode so you can compile any changes 
+with `Ctrl-shift-B` You need however to 
 change .vsCode/task.json file to point 
-to your IBMi address. Also remember to start `STRTCPSVR *SSHD` 
+to your IBMi address. The compile feature requires that you have SSH stated: `STRTCPSVR *SSHD` 
+
+# Moving on
+In this first commit we have only implemented the `node_listen` and `node_write`, so there is not much use for real world application, however - all the plumbing arround with git / compile / deploy are working. We at Sitemule.com are striving to move the core of the IceBreak server into the Node.RPG project over the next couple of months. So stay tuned.
+
+Happy Node.RPG coding
 
