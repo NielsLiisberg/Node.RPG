@@ -69,3 +69,28 @@ Example:
 
 This first commit we have only implemented the `node_listen` and `node_write`, so there is not much use for real world application, however - we at Sitemule are striving to move the core of the IceBreak server into the Node.RPG project over the next couple of months. So stay tuned.
  
+# Installation
+What you need before you start:
+
+* IBMI 7.3 TR3 ( obove or alike)
+* 5733OPS git and gmake
+* ILE C 
+* ILE RPG compiler.
+
+start ssh or call qp2term
+
+```
+mkdir /prj
+cd /prj 
+git -c http.sslVerify=false clone https://github.com/NielsLiisberg/Node.RPG.git
+cd Node.RPG
+gmake 
+cd test 
+gmake
+```
+Yes - You compile the project with gmake, and I have also included at 
+set up folder for vsCode so you can compile any changes 
+with `Ctrl-shift.B` You need however to 
+change .vsCode/task.json file to point 
+to your IBMi address. Also remember to start `STRTCPSVR *SSHD` 
+
