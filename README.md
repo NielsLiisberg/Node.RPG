@@ -1,9 +1,15 @@
 # Node.RPG
-Node for RPG use the same development 
-Node.RPG is a HTTP server you can bind into your ILE RPG projects, 
+Node.RPG is a self contained web application server for the ILE environment on IBMi. 
+
+It is a service program that provides a simple programmable HTTP server for your 
+application so you easy can plug your RPG code into a services infrastructure 
+or make simple web applications without the need of any third party webserver products.
+
+Node.RPG is a HTTP application server you can bind into your own ILE RPG projects, 
 to give you a easy deploy mechanism, that fits into DevOps and microservices alike environments.
 
-The self contained server and application makes it so much easier to develop web application. 
+The self contained web application server makes it so much easier to develop web application. 
+
 Simply compile and submit. Yes - You don't need GCI, Apache, nginx or IceBreak - simply compile and submit.
 
 The design paradigm is the same as found in Node.JS hence the name. Where Node.JS uses 
