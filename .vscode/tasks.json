@@ -4,8 +4,8 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compiler",
-            "command": "ssh dksrv133 'cd /git/noderpg/;gmake'",
+            "label": "Compile Service program Node.RPG",
+            "command": "ssh dksrv133 'cd /prj/node.rpg/;gmake'",
             "type": "shell",
             "group": {
                 "kind": "build",
@@ -16,8 +16,8 @@
             ]
         },
         {
-            "label": "Test",
-            "command": "ssh dksrv133 'cd /git/noderpg/test/;gmake'",
+            "label": "Compile Test modules for Node.RPG",
+            "command": "ssh dksrv133 'cd /prj/node.rpg/test/;gmake'",
             "type": "shell",
             "group": {
                 "kind": "build",
