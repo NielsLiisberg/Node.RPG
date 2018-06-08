@@ -1,8 +1,4 @@
-﻿#
-# Build script for libxlsxwriter
-#
- 
-
+﻿
 #-----------------------------------------------------------
 # User-defined part start
 #
@@ -21,9 +17,6 @@ INCLUDE=/QIBM/include
 ##CCFLAGS=OUTPUT(*PRINT *NOSHOWSRC) OPTIMIZE(10) ENUM(*INT) TERASPACE(*YES) STGMDL(*INHERIT) SYSIFCOPT(*IFSIO) INCDIR('$(INCLUDE)')
 CCFLAGS=OUTPUT(*PRINT *NOSHOWSRC) OPTIMIZE(10) ENUM(*INT) TERASPACE(*YES) STGMDL(*INHERIT) SYSIFCOPT(*IFSIO) INCDIR('$(INCLUDE)') DBGVIEW(*ALL)
 
-# before build:
-# CHGATR OBJ('/git/noderpg/*') ATR(*CCSID) VALUE(1208)
-
 #
 # User-defined part end
 #-----------------------------------------------------------
@@ -34,6 +27,7 @@ CCFLAGS=OUTPUT(*PRINT *NOSHOWSRC) OPTIMIZE(10) ENUM(*INT) TERASPACE(*YES) STGMDL
 # suffix rules
 .rpgle:
 	system "CRTRPGMOD $(BIN_LIB)/$@ SRCSTMF('$<') $(RCFLAGS)"
+	touch filename.o
 .c:
 	system "CRTCMOD MODULE($(BIN_LIB)/$@ SRCSTMF('$<' $(CCFLAGS)
                
@@ -42,8 +36,9 @@ all: env compile bind
 env:
 	system "CHGATR OBJ('*') ATR(*CCSID) VALUE(1208)"
 	system "CHGATR OBJ('noderpg.bnd') ATR(*CCSID) VALUE(1252)"
-	-system -q "CRTBNDDIR BNDDIR(NODERPG/NODERPG)"
-	-system -q "ADDBNDDIRE BNDDIR(NODERPG/NODERPG) OBJ((NODERPG))"
+	-system -q "CRTLIB $(BIN_LIB)"
+	-system -q "CRTBNDDIR BNDDIR($(BIN_LIB)/NODERPG)"
+	-system -q "ADDBNDDIRE BNDDIR($(BIN_LIB)/NODERPG) OBJ((NODERPG))"
 
 
 compile: 

@@ -17,7 +17,7 @@
 
             dcl-ds config likeds(configDS);
 
-            config.port = 44999;
+            config.port = 44999; 
             config.host = '*ANY';
 
             node_listen (config : %paddr(myservlet));
