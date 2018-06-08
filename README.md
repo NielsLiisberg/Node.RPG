@@ -1,9 +1,7 @@
 # Node.RPG
 Node.RPG is a self contained web application server for the ILE environment on IBMi. 
 
-It is a service program that provides a simple programmable HTTP server for your 
-application so you easy can plug your RPG code into a services infrastructure 
-or make simple web applications without the need of any third party webserver products.
+It is a service program that provides a simple, blazing fast programmable HTTP server for your application so you easy can plug your RPG code into a services infrastructure or make simple web applications without the need of any third party webserver products.
 
 Node.RPG is a HTTP application server you can bind into your own ILE RPG projects, 
 to give you a easy deploy mechanism, that fits into DevOps and microservices alike environments.
